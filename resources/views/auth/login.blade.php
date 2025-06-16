@@ -1,11 +1,13 @@
 @extends('layouts.page_login')
 
 @section('content')
-<div class="container d-flex justify-content-center align-items-center" style="height: 75vh;">
-    <div class="card-body">
+<div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
+    <div class="card-body" >
+        <h2 class="text-center mb-5">Login User</h2>
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            
+
             <div class="row mb-5 justify-content-center">
                 <div class="col-md-6">
                     <label for="email" class="md-2 mb-3">{{ __('Alamat E-Mail') }}</label>
@@ -19,17 +21,17 @@
                 </div>
             </div>
 
-            <div class="row mb-5 justify-content-center">                
+            <div class="row mb-5 justify-content-center">
                 <div class="col-md-6">
                     <label for="password" class="md-2 mb-3">{{ __('Password') }}</label>
                     <div class="position-relative">
-                        <input id="password" type="password" 
-                            class="form-control @error('password') is-invalid @enderror" 
-                            name="password" required autocomplete="current-password" 
-                            placeholder="********" 
+                        <input id="password" type="password"
+                            class="form-control @error('password') is-invalid @enderror"
+                            name="password" required autocomplete="current-password"
+                            placeholder="********"
                             style="border-radius: 50px; height:60px; padding-right: 40px;">
-                        <span class="position-absolute top-50 end-0 translate-middle-y pe-3" 
-                            style="cursor: pointer;" 
+                        <span class="position-absolute top-50 end-0 translate-middle-y pe-3"
+                            style="cursor: pointer;"
                             onclick="togglePassword()">
                             <i class="fas fa-eye-slash" id="togglePasswordIcon" style="color: rgb(195, 195, 195)"></i>
                         </span>
@@ -55,20 +57,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-4">
                 <div class="col-md-6 offset-md-3">
                     <button type="submit" class="btn btn-primary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px;">
                         {{ __('Masuk') }}
                     </button>
                 </div>
             </div>
-            
+
             @if (Route::has('register'))
-                <div class="row mb-3">
+                <div class="row mb-3 justify-content-between">
                     <div class="col-md-6 offset-md-3">
-                        <button class="btn btn-outline-primary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px;" href="{{ route('register') }}">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Daftar') }}</a>
-                        </button>
+                        <p class="text-center">Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none text-primary">{{ __('Daftar Sekarang') }}</a></p>
                     </div>
                 </div>
             @endif
@@ -79,7 +79,7 @@
     function togglePassword() {
         const passwordInput = document.getElementById('password');
         const toggleIcon = document.getElementById('togglePasswordIcon');
-        
+
         if (passwordInput.type === 'password') {
             passwordInput.type = 'text';
             toggleIcon.classList.remove('fa-eye-slash');
