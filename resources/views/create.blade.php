@@ -51,37 +51,18 @@
                             <a href="{{ url('home') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <button class="btn-green-100 px-10 py-2 rounded-md font-semibold">Kembali ke Beranda</button>
                             </a>
+                        @csrf
+                            <div class="mt-4">
+                            <form method="POST">
+                            
+                            </div>
 
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="{{ Auth::user()->profile_image ?? '/aset/profile-icon.png' }}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px;">
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <p class="dropdown-header fs-6 text-muted">{{ Auth::user()->name }}</p>
-                                    
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Keluar') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-
-                                    <div class="flex mt-6">
-                                        <h2 class="font-semibold text-xl">Add Maskapai</h2>
-                                    </div>
-
-                                </div>
-                            </li>
                         @endguest
                     </ul>
+
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
