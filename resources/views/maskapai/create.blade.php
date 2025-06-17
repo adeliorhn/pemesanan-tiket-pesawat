@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin_app')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
         </div>
      </div>
 
-    <form action="POST">
+    <form action="POST" action="{{ route('keranjang') }}" enctype="multipart/form-data">
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             @csrf
             <div class="mb-3 row">
@@ -38,7 +38,7 @@
                     <input type="text" class="form-control" name="asal" id="" placeholder="Masukkan Asal penerbangan" required>
                 </div>
             </div>
-            
+
             <div class="mb-3 row">
                 <label for="tujuan" class="form-label">Tujuan:</label>
                 <div>
@@ -52,7 +52,7 @@
                     <input type="date" class="form-control" name="waktu_keberangkatan" id="" placeholder="Masukkan Waktu Keberangkatan" required>
                 </div>
             </div>
-            
+
             <div class="mb-3">
                 <label for="waktu_kedatangan" class="form-label">Waktu Kedatangan: </label>
                 <div>
@@ -66,7 +66,7 @@
                     <input type="number" class="form-control" name="harga" id="" placeholder="Masukkan Harga" required>
                 </div>
             </div>
-            
+
             <div class="mb-3 row">
                 <a href="{{ url('home') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                     <button type="submit" class="btn btn-primary">Simpan</button>
