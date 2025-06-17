@@ -13,6 +13,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
@@ -32,14 +33,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-2">
-                        
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item me-2 w-100 w-md-auto">
                                     <button class="btn btn-outline-primary w-100 w-md-auto" style="border-radius: 30px; margin-bottom: 15px; margin-right: 25px;">
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
@@ -53,7 +54,7 @@
                                         <a class="nav-link" href="{{ route('register') }}" style="color: white;">{{ __('Daftar') }}</a>
                                     </button>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -80,6 +81,7 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('scripts')
         </main>
     </div>
 </body>

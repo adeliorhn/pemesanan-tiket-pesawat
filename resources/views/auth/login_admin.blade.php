@@ -1,17 +1,16 @@
 @extends('layouts.page_login')
 
 @section('content')
-<div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
-    <div class="card-body" >
-        <h2 class="text-center mb-5">Login User</h2>
-
+<div class="container d-flex justify-content-center align-items-center" style="height: 75vh;">
+    <div class="card-body">
+        <h2 class="text-center mb-5">Login Admin</h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <div class="row mb-5 justify-content-center">
                 <div class="col-md-6">
                     <label for="email" class="md-2 mb-3">{{ __('Alamat E-Mail') }}</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="user@email.com" style="border-radius: 50px; height:60px">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="admin@email.com" style="border-radius: 50px; height:60px">
 
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -53,7 +52,7 @@
                                 {{ __('Ingat Saya') }}
                             </label>
                         </div>
-                        <a href="{{ url("login_admin") }}" class="text-decoration-none text-primary">Login sebagai Admin</a>
+                        <a href="{{ url("login") }}" class="text-decoration-none text-primary">Login sebagai User</a>
                     </div>
                 </div>
             </div>

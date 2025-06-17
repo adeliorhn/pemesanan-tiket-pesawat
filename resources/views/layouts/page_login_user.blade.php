@@ -31,16 +31,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('home') }}">{{ __('Beranda') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('about') }}">{{ __('Tentang Kami') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('contact') }}">{{ __('Kontak Kami') }}</a>
-                        </li>
+                    <ul class="navbar-nav me-2">
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -48,33 +40,27 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
+                                <li class="nav-item me-2 w-100 w-md-auto">
+                                    <button class="btn btn-outline-primary w-100 w-md-auto" style="border-radius: 30px; margin-bottom: 15px; margin-right: 25px;">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
+                                    </button>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Daftar') }}</a>
+                                <li class="nav-item me-2 w-100 w-md-auto">
+                                    <button class="btn btn-primary w-100 w-md-auto" style="border-radius: 30px; margin-right: 25px;">
+                                        <a class="nav-link" href="{{ route('register') }}" style="color: white;">{{ __('Daftar') }}</a>
+                                    </button>
                                 </li>
                             @endif
                         @else
-                            {{-- Keranjang DropDown --}}
-                            <a href="{{ url('create') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <button class="btn-green-100 px-10 py-2 rounded-md font-semibold">Tambah</button>
-                            </a>
-
-                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Keranjang" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
-                            </a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="{{ Auth::user()->profile_image ?? '/aset/profile-icon.png' }}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px;">
+                                    {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <p class="dropdown-header fs-6 text-muted">{{ Auth::user()->name }}</p>
-                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

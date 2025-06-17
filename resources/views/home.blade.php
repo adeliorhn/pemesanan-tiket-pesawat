@@ -30,7 +30,7 @@
         </div>
         @foreach ($penerbangan as $penerbangan)
         <div class="col-md-3 mb-4">
-            <div class="card" style="witdh: 18rem;">
+            <div class="card" style="width: 18rem;">
                 <img src="{{ asset('aset/' . $penerbangan->gambar) }}" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">{{ $penerbangan->nama_maskapai }}</h5>

@@ -60,13 +60,13 @@
                             @endif
                         @else
                             {{-- Keranjang DropDown --}}
-                            <a href="{{ url('create') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <button class="btn-green-100 px-10 py-2 rounded-md font-semibold">Tambah</button>
-                            </a>
-
                             <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Keranjang" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
                             </a>
+                            {{-- Tambah Maskapai --}}
+                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Tambah Maskapai" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
+                            {{-- Profile DropDown --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="{{ Auth::user()->profile_image ?? '/aset/profile-icon.png' }}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px;">
