@@ -25,3 +25,4 @@ Route::get('/about', [App\Http\Controllers\AboutController::class,'index'])->nam
 Route::get('/contact', [App\Http\Controllers\ContactController::class,'index'])->name('contact');
 Route::get('/login_admin', [App\Http\Controllers\Auth\LoginAdminController::class,'index'])->name('login_admin');
 Route::get('/create', [App\Http\Controllers\TiketController::class,'create'])->name('create');
+Route::get('/keranjang', [App\Http\Controllers\KeranjangController::class,'index'])->name('keranjang');
