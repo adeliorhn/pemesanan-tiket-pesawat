@@ -60,21 +60,17 @@
                             @endif
                         @else
                             {{-- Keranjang DropDown --}}
-                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Keranjang" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
+                            <a id="navbarDropdown" class="nav-link" href="{{ url('create') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ '/aset/add_icon.png' }}" alt="add" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
                             </a>
-                            {{-- Tambah Maskapai --}}
-                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Tambah Maskapai" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
                             {{-- Profile DropDown --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="{{ Auth::user()->profile_image ?? '/aset/profile-icon.png' }}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px;">
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <p class="dropdown-header fs-6 text-muted">{{ Auth::user()->name }}</p>
-                                    
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

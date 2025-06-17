@@ -60,10 +60,6 @@
                             @endif
                         @else
                             {{-- Keranjang DropDown --}}
-                            <a href="{{ url('create') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <button class="btn-green-100 px-10 py-2 rounded-md font-semibold">Tambah</button>
-                            </a>
-
                             <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Keranjang" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
                             </a>
@@ -74,7 +70,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <p class="dropdown-header fs-6 text-muted">{{ Auth::user()->name }}</p>
-                                    
+                                    <a class="dropdown-item fs-6" href="{{ route('home_admin') }}">Beralih ke Admin</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
