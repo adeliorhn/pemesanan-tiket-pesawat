@@ -60,7 +60,7 @@
                             @endif
                         @else
                             {{-- Keranjang DropDown --}}
-                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a href="{{ url('create') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <button class="btn-green-100 px-10 py-2 rounded-md font-semibold">Tambah</button>
                             </a>
 
