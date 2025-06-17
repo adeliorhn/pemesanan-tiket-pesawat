@@ -1,9 +1,9 @@
 @extends('layouts.page_login')
 
 @section('content')
-<div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
+<div class="container d-flex justify-content-center align-items-center" style="height: 75vh;">
     <div class="card-body" >
-        <h2 class="text-center mb-5">Login User</h2>
+        <h2 class="text-center mb-5">Login</h2>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -53,7 +53,6 @@
                                 {{ __('Ingat Saya') }}
                             </label>
                         </div>
-                        <a href="{{ url("login_admin") }}" class="text-decoration-none text-primary">Login sebagai Admin</a>
                     </div>
                 </div>
             </div>
