@@ -7,27 +7,24 @@
         <div class="col-md-12 mb-4">
             <h1 class="text-center mt-5">Tentang Kami</h1>
         </div>
-        
+
         <div class="col-md-10">
-            <p><strong>Ayo Pergi</strong> Merupakan perusahaan penyedia layanan pemesanan tiket pesawat yang berkomitmen memberikan kemudahan, kenyamanan, dan keamanan dalam setiap perjalanan Anda. Kami hadir sebagai solusi modern bagi para pelancong, pebisnis, dan siapa pun yang ingin merencanakan perjalanan udara secara praktis dan terpercaya.</p>
-            
-            <p>Dengan sistem pemesanan yang cepat dan platform yang ramah pengguna, pelanggan kami dapat mencari, membandingkan, dan memesan tiket pesawat dari berbagai maskapai domestik maupun internasional hanya dalam hitungan menit.</p>
-            
-            <p>Didukung oleh tim profesional dan teknologi terkini, kami terus berinovasi untuk menghadirkan layanan terbaik, mulai dari pemesanan tiket, informasi jadwal penerbangan, hingga layanan pelanggan yang siap membantu Anda kapan saja.</p>
+            <div style="text-align: justify;">
+                <p><strong>Ayo Pergi</strong> adalah perusahaan teknologi yang berfokus pada penyediaan layanan pemesanan tiket pesawat secara daring. Kami berkomitmen untuk menghadirkan solusi perjalanan udara yang efisien, aman, dan terpercaya bagi pelanggan individu maupun korporasi.Melalui platform digital yang intuitif dan responsif, pelanggan dapat dengan mudah menelusuri, membandingkan, dan memesan tiket penerbangan dari berbagai maskapai domestik maupun internasional dalam waktu singkat. Kami menjembatani kebutuhan perjalanan dengan teknologi, menghadirkan pengalaman pemesanan yang cepat dan bebas hambatan. Didukung oleh tim profesional yang berdedikasi dan infrastruktur teknologi mutakhir, <strong>Ayo Pergi</strong> terus berinovasi untuk memastikan bahwa setiap aspek layanan kami — mulai dari pencarian tiket hingga layanan pelanggan — berjalan optimal demi kenyamanan dan kepuasan pengguna.</p>
 
-            <h4 class="mt-4">🎯 Visi Kami</h4>
-            <p>Menjadi platform pemesanan tiket pesawat terdepan di Indonesia yang terpercaya, inovatif, dan berorientasi pada kepuasan pelanggan.</p>
+                <h4 class="mt-4">Visi Kami</h4>
+                <p>Menjadi platform pemesanan tiket pesawat terdepan di Indonesia yang terpercaya, inovatif, dan berorientasi pada kepuasan pelanggan.</p>
 
-            <h4 class="mt-4">🎯 Misi Kami</h4>
-            <ul>
-                <li>Menyediakan layanan pemesanan tiket pesawat yang mudah, cepat, dan aman.</li>
-                <li>Menjalin kerja sama dengan maskapai terpercaya di seluruh dunia.</li>
-                <li>Memberikan layanan pelanggan yang responsif dan profesional.</li>
-                <li>Terus berinovasi untuk menciptakan pengalaman perjalanan yang lebih baik bagi semua orang.</li>
-            </ul>
+                <h4 class="mt-4">Misi Kami</h4>
+                <ul>
+                    <li>Menyediakan layanan pemesanan tiket pesawat yang cepat, mudah, dan aman melalui teknologi digital.</li>
+                    <li>Menjalin kemitraan strategis dengan maskapai-maskapai ternama di tingkat nasional maupun global.</li>
+                    <li>Memberikan layanan pelanggan yang profesional, responsif, dan berorientasi pada solusi.</li>
+                    <li>Mendorong inovasi berkelanjutan untuk menciptakan pengalaman perjalanan yang lebih baik bagi seluruh pengguna.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
 </div>
 @endsection
-
