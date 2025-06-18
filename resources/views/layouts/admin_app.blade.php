@@ -70,7 +70,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <p class="dropdown-header fs-6 text-muted">{{ Auth::user()->name }}</p>
-
+                                    <a class="dropdown-item fs-6" href="{{ route('home') }}">Beralih ke User</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

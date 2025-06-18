@@ -24,6 +24,6 @@ Route::get('/home_admin', [App\Http\Controllers\HomeAdminController::class, 'ind
 Route::get('/about', [App\Http\Controllers\AboutController::class,'index'])->name('about');
 Route::get('/contact', [App\Http\Controllers\ContactController::class,'index'])->name('contact');
 Route::get('/login_admin', [App\Http\Controllers\Auth\LoginAdminController::class,'index'])->name('login_admin');
-Route::get('/create', [App\Http\Controllers\PenerbanganController::class,'create'])->name('create');
+Route::post('/create', [App\Http\Controllers\PenerbanganController::class,'create'])->name('create');
 Route::get('/keranjang', [App\Http\Controllers\KeranjangController::class,'index'])->name('keranjang');
 Route::post('/keranjang', [App\Http\Controllers\KeranjangController::class,'keranjang'])->name('keranjang');
