@@ -8,7 +8,7 @@
         </div>
      </div>
 
-    <form action="POST" action="{{ route('keranjang') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ url('create') }}" enctype="multipart/form-data">
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             @csrf
             <div class="mb-3 row">
