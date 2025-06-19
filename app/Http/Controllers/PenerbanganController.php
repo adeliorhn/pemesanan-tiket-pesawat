@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\penerbangan;
 use illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session as FacadesSession;    
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class PenerbanganController extends Controller
 {
@@ -15,7 +15,7 @@ class PenerbanganController extends Controller
      */
     public function index()
     {
-        return view("home_admin");
+        return view("home");
     }
 
     /**
@@ -58,7 +58,7 @@ class PenerbanganController extends Controller
             'waktu_kedatangan.required' => 'Waktu kedatangan harus diisi'
         ]);
 
-            
+
         penerbangan::create($data);
         return redirect()->route('home_admin')->with('success', 'Penerbangan berhasil ditambahkan');
     }
