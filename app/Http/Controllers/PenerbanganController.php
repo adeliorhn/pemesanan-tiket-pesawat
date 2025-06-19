@@ -15,7 +15,8 @@ class PenerbanganController extends Controller
      */
     public function index()
     {
-        return view("home");
+        $penerbangan = Penerbangan::all();
+        return view('home', compact('penerbangan'));
     }
 
     /**
@@ -31,36 +32,28 @@ class PenerbanganController extends Controller
      */
     public function store(Request $request)
     {
-        FacadesSession::flash('gambar', $request->gambar);
-        FacadesSession::flash('nama_maskapai', $request->nama_maskapai);
-        FacadesSession::flash('nomor_maskapai', $request->nomor_maskapai);
-        FacadesSession::flash('asal', $request->asal);
-        FacadesSession::flash('tujuan', $request->tujuan);
-        FacadesSession::flash('waktu_keberangkatan', $request->waktu_keberangkatan);
-        FacadesSession::flash('waktu_kedatangan', $request->waktu_kedatangan);
-        FacadesSession::flash('harga', $request->harga);
-
-        $data = $request->validate( [
-            'gambar'=> 'required|image|mimes:jpg,png,jpeg|max:2048',
-            'nama_maskapai' => 'required|string|max:255',
-            'nomor_maskapai' => 'required|integer|max:255',
-            'asal' => 'required|string|max:255',
-            'tujuan' => 'required|string|max:255',
-            'waktu_keberangkatan' => 'required|date',
-            'waktu_kedatangan' => 'required|date'
-        ], [
-            'gambar.required' => 'Gambar maskapai harus diisi',
-            'nama_maskapai.required' => 'Nama maskapai harus diisi',
-            'nomor_maskapai.required' => 'Nomor maskapai harus diisi',
-            'asal.required' => 'Asal maskapai harus diisi',
-            'tujuan.required' => 'Tujuan maskapai harus diisi',
-            'waktu_keberangkatan.required' => 'Waktu keberangkatan harus diisi',
-            'waktu_kedatangan.required' => 'Waktu kedatangan harus diisi'
+        $validatedData = $request->validate([
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'nama_maskapai' => 'required',
+            'nomor_maskapai' => 'required',
+            'asal' => 'required',
+            'tujuan' => 'required',
+            'waktu_keberangkatan' => 'required',
+            'waktu_kedatangan' => 'required',
+            'harga' => 'required|numeric'
         ]);
 
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $validatedData['gambar'] = $imageName;
+        }
 
-        penerbangan::create($data);
-        return redirect()->route('home_admin')->with('success', 'Penerbangan berhasil ditambahkan');
+        penerbangan::create($validatedData);
+
+        return redirect()->route('penerbangan.index')
+            ->with('success', 'Maskapai berhasil ditambahkan');
     }
 
     /**

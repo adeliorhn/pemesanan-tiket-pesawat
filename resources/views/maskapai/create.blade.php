@@ -8,7 +8,7 @@
         </div>
      </div>
 
-    <form method="POST" action="{{ url('home') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('penerbangan.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <div class="mb-3 row">
@@ -68,9 +68,8 @@
             </div>
 
             <div class="mb-3 row">
-                <a href="{{ url('home') }}" id="navbarDropdown" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </a>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="{{ route('home') }}" class="btn btn-secondary">Kembali</a>
             </div>
 
 
