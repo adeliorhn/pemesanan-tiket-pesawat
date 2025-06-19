@@ -16,7 +16,7 @@ class PenerbanganController extends Controller
     public function index()
     {
         $penerbangan = Penerbangan::all();
-        return view('home', compact('penerbangan'));
+        return view('home_admin', compact('penerbangan'));
     }
 
     /**
@@ -85,6 +85,7 @@ class PenerbanganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        \App\Models\penerbangan::where('id_penerbangan', $id)->delete();
+        return redirect()->route('penerbangan.index')->with('success', 'Data berhasil dihapus!');
     }
 }
