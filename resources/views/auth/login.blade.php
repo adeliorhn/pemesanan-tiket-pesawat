@@ -11,8 +11,10 @@
             <div class="row mb-5 justify-content-center">
                 <div class="col-md-6">
                     <label for="email" class="md-2 mb-3">{{ __('Alamat E-Mail') }}</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="user@email.com" style="border-radius: 50px; height:60px">
-
+                    <div class="form-floating">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="user@email.com" style="border-radius: 50px; height:60px">
+                        <label for="email" class="md-2 mb-3">{{ __('E-Mail') }}</label>
+                    </div>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -25,16 +27,19 @@
                 <div class="col-md-6">
                     <label for="password" class="md-2 mb-3">{{ __('Password') }}</label>
                     <div class="position-relative">
-                        <input id="password" type="password"
-                            class="form-control @error('password') is-invalid @enderror"
-                            name="password" required autocomplete="current-password"
-                            placeholder="********"
-                            style="border-radius: 50px; height:60px; padding-right: 40px;">
-                        <span class="position-absolute top-50 end-0 translate-middle-y pe-3"
-                            style="cursor: pointer;"
-                            onclick="togglePassword()">
-                            <i class="fas fa-eye-slash" id="togglePasswordIcon" style="color: rgb(195, 195, 195)"></i>
-                        </span>
+                        <div class="form-floating">
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror"
+                                name="password" required autocomplete="current-password"
+                                placeholder="********"
+                                style="border-radius: 50px; height:60px; padding-right: 40px;">
+                            <span class="position-absolute top-50 end-0 translate-middle-y pe-3"
+                                style="cursor: pointer;"
+                                onclick="togglePassword()">
+                                <i class="fas fa-eye-slash" id="togglePasswordIcon" style="color: rgb(195, 195, 195)"></i>
+                            </span>
+                            <label for="password" class="md-2 mb-3">{{ __('Password') }}</label>
+                        </div>
                     </div>
                     @error('password')
                         <span class="invalid-feedback" role="alert">

@@ -69,7 +69,8 @@ class PenerbanganController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Penerbangan::where('id_penerbangan', $id)->first();
+        return view('maskapai.edit')->with('data', $data);
     }
 
     /**

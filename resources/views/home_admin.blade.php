@@ -25,8 +25,8 @@
     </div>
 
     <div class="row justify-content-center">
+        <h1 class="text-center mt-5">Mau Kemana Hari Ini?</h1>
         <div class="col-md-12 mb-4">
-            <h1 class="text-center mt-5">Mau Kemana Hari Ini?</h1>
         </div>
         @foreach ($penerbangan as $penerbangan)
         <div class="col-md-3 mb-4">
@@ -37,10 +37,11 @@
                     <p class="card-text">Asal: {{ $penerbangan->asal }}</p>
                     <p class="card-text">Tujuan: {{ $penerbangan->tujuan }}</p>
                     <p class="card-text mb-3"><strong>Harga: </strong> Rp. {{number_format($penerbangan->harga)}}</p>
+                    <a class="btn btn-warning btn-sm col-md-12 mb-2" style="font-size: larger" href="{{url('penerbangan/' .$penerbangan->id_penerbangan.'/edit')}}">Edit</a>
                     <form action="{{ route('penerbangan.destroy', $penerbangan->id_penerbangan) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        <button type="submit" class="btn btn-danger col-md-12">Delete</button>
                     </form>
                 </div>
             </div>
