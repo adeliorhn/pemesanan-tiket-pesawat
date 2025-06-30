@@ -78,7 +78,27 @@ class PenerbanganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama_maskapai' => 'required',
+            'nomor_maskapai' => 'required',
+            'asal' => 'required',
+            'tujuan' => 'required',
+            'waktu_keberangkatan' => 'required',
+            'waktu_kedatangan' => 'required',
+            'harga' => 'required|numeric'
+        ]);
+
+        $data = [
+            'nama_maskapai' => $request -> nama_maskapai,
+            'nomor_maskapai' => $request -> nomor_maskapai,
+            'asal' => $request -> asal,
+            'tujuan' => $request -> tujuan,
+            'waktu_keberangkatan' => $request -> waktu_keberangkatan,
+            'waktu_kedatangan' => $request -> waktu_kedatangan,
+            'harga' => $request -> harga
+        ];
+        Penerbangan::where('id_penerbangan', $id)->update($data);
+        return redirect()->to('home_admin')->with('success','Berhasil Mengedit Data');
     }
 
     /**
