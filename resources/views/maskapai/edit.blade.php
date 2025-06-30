@@ -67,12 +67,21 @@
                 </div>
             </div>
 
-            <div class="mb-3 row">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{ route('home') }}" class="btn btn-secondary">Kembali</a>
+             <div class="row mb-3">
+                <div class="col-md-6 offset-md-3">
+                    <button type="submit" class="btn btn-primary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px;">
+                        {{ __('Simpan') }}
+                    </button>
+                </div>
             </div>
 
-
+            <div class="row mb-3">
+                <div class="col-md-6 offset-md-3">
+                    <div class="btn btn-secondary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px; line-height: 45px;">
+                        <a href="{{ route('home_admin') }}" class="text-white text-decoration-none">Kembali</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </form>
