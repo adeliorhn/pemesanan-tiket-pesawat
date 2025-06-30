@@ -60,11 +60,7 @@
                             @endif
                         @else
                             {{-- Keranjang DropDown --}}
-                            <a href="{{ url('create') }}" id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <button class="btn-green-100 px-10 py-2 rounded-md font-semibold">Tambah</button>
-                            </a>
-
-                            <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link" href="keranjang" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Keranjang" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
                             </a>
                             <li class="nav-item dropdown">

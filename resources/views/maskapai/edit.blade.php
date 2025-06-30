@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12 mb-4">
-            <h1 class="text-center mt-5">Tambah Maskapai</h1>
+            <h1 class="text-center mt-5">Edit Maskapai</h1>
         </div>
      </div>
 
-    <form method="POST" action="{{ route('penerbangan.store') }}" enctype="multipart/form-data">
+    <form method="GET" action="{{ route('penerbangan.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <div class="mb-3 row">

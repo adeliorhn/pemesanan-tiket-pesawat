@@ -12,4 +12,14 @@ class penerbangan extends Model
     {
         return $this->hasMany(pemesanan::class, 'id_penerbangan', 'id_penerbangan');
     }
+    protected $fillable = [
+    'gambar',
+    'nama_maskapai',
+    'nomor_maskapai',
+    'asal',
+    'tujuan',
+    'waktu_keberangkatan',
+    'waktu_kedatangan',
+    'harga'
+    ];
 }
