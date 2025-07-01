@@ -5,7 +5,7 @@ use App\Models\pemesanan;
 use App\Models\penerbangan;
 use Illuminate\Http\Request;
 
-class KeranjangController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,9 +22,9 @@ class KeranjangController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($id)
     {
-        $penerbangan = penerbangan::all();
-        return view('keranjang', compact('penerbangan'));
+        $penerbangan = penerbangan::where('id_penerbangan', $id)->first();
+        return view('checkout.index', compact('penerbangan'));
     }
 }

@@ -28,5 +28,4 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class,'index'])-
 Route::get('/login_admin', [App\Http\Controllers\Auth\LoginAdminController::class,'index'])->name('login_admin');
 Route::get('/create', [App\Http\Controllers\PenerbanganController::class,'create'])->name('create');
 Route::post('/create', [App\Http\Controllers\PenerbanganController::class,'create'])->name('create');
-Route::get('/keranjang', [App\Http\Controllers\KeranjangController::class,'index'])->name('keranjang');
-Route::post('/keranjang', [App\Http\Controllers\KeranjangController::class,'keranjang'])->name('keranjang');
+Route::get('checkout/{id}', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');

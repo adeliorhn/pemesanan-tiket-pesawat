@@ -77,9 +77,9 @@
 
             <div class="row mb-3">
                 <div class="col-md-6 offset-md-3">
-                    <div class="btn btn-secondary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px; line-height: 45px;">
-                        <a href="{{ route('home_admin') }}" class="text-white text-decoration-none">Kembali</a>
-                    </div>
+                    <button type="button" class="btn btn-secondary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px; line-height: 45px;">
+                        <a href="{{ url('home_admin') }}" class="text-white text-decoration-none">Kembali</a>
+                    </button>
                 </div>
             </div>
         </div>

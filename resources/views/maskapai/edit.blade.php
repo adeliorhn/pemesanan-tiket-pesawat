@@ -92,12 +92,19 @@
                 </div>
             </div>
 
-            <div class="mb-3 row">
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+            <div class="row mb-3">
+                <div class="col-md-6 offset-md-3">
+                    <button type="submit" class="btn btn-primary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px;">
+                        {{ __('Simpan Perubahan') }}
+                    </button>
                 </div>
-                <div class="col-auto">
-                    <a href="{{ route('penerbangan.index') }}" class="btn btn-secondary">Kembali</a>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6 offset-md-3">
+                    <button class="btn btn-secondary w-100 w-md-auto" style="border-radius: 50px; height:60px; width: 100px; line-height: 45px;">
+                        <a href="{{ url('home_admin') }}" class="text-white text-decoration-none">Kembali</a>
+                    </button>
                 </div>
             </div>
         </div>
