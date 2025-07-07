@@ -1,11 +1,11 @@
 services:
     laravel.test:
         build:
-            context: './vendor/laravel/sail/runtimes/8.4'
+            context: ./vendor/laravel/sail/runtimes/8.4
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: 'sail-8.4/app'
+        image: sail-8.4/app
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -48,14 +48,14 @@ services:
             retries: 3
             timeout: 5s
     vite:
-        image: node:18-alpine
+        image: 'node:18-alpine'
         container_name: laravel_vite
         working_dir: /var/www/html
         ports:
-            - "${VITE_PORT:-5173}:${VITE_PORT:-5173}"
+            - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
         volumes:
-            - ./:/var/www/html
-        command: sh -c "npm install && npm run dev -- --host"
+            - './:/var/www/html'
+        command: 'sh -c "npm install && npm run dev -- --host"'
         networks:
             - sail
 networks:
