@@ -20,10 +20,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('home') }}">
-                    <img src="aset/logoo.png" alt="Logo" style="width: 150px; height: 85px; margin-right: 10px;">
+                    <img src="/aset/logoo.png" alt="Logo" style="width: 150px; height: 85px; margin-right: 10px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('home') }}">{{ __('Beranda') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('about') }}">{{ __('Tentang Kami') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('contact') }}">{{ __('Kontak Kami') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -51,12 +59,19 @@
                                 </li>
                             @endif
                         @else
+                            {{-- Keranjang DropDown --}}
+                            <a id="navbarDropdown" class="nav-link" href="keranjang" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ Auth::user()->profile_image ?? '/aset/keranjang.png' }}" alt="Keranjang" class="rounded-circle" style="width: 35px; height: 35px; margin-right: 10px;">
+                            </a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    <img src="{{ Auth::user()->profile_image ?? '/aset/profile-icon.png' }}" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px;">
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <p class="dropdown-header fs-6 text-muted">{{ Auth::user()->name }}</p>
+                                    <a class="dropdown-item fs-6" href="{{ route('home_admin') }}">Beralih ke Admin</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
